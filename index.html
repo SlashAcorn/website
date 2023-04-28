@@ -9,14 +9,17 @@
     <link rel="stylesheet" href="style.css">
   </head>
 
-  <body>
+  <body onload="myAge()">
     <div id="main">
       <h1>Hi! I'm SlashAcorn</h1>
       <h2>This is my junk drawer of ideas and other useless garbage</h2>
       <hr width="100%" size="2" color="#ebdbb2">
       <br>
-      <h3>About Me</h3>
-      <br>
+      <h2>About Me</h2>
+      <p>
+        I am a <span id="age"></span> year old nerd interested in Linux, Wayland
+        and GNU Emacs<span id="birthday">.</span>
+      </p>
       <br>
       <footer>
         <a href="https://gnu.org/software/emacs"><img src="assets/emacs.png"></a>
@@ -26,5 +29,24 @@
         <img src="assets/nowebp.gif">
       </footer>
     </div>
+    <script>
+      function myAge() {
+          var date = new Date();
+          var dd = String(date.getDate()).padStart(2, '0');
+          var mm = String(date.getMonth() + 1).padStart(2, '0');
+          var yyyy = date.getFullYear();
+          
+          date = yyyy + mm + dd;
+          const birthday = 20080513;
+          var longage = (date - birthday) / 10000;
+          var age = Math.trunc(longage);
+
+          document.getElementById("age").innerHTML = age;
+
+          if (longage == age) {
+              document.getElementById("birthday").innerHTML = " and its my birthday today!";
+          }
+      }
+    </script>
   </body>
 </html>
