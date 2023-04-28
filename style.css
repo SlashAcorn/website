@@ -1,0 +1,12 @@
+body {
+    font-family: "Fira Code", monospace;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+#main {
+    max-width: 65%;
+    margin-top: 40px;
+}
