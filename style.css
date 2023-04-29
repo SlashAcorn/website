@@ -12,3 +12,29 @@ body {
     max-width: 65%;
     margin-top: 40px;
 }
+
+#projlist {
+    background-color: #32302f;
+    border-radius: 10px;
+    text-align: left;
+    margin: auto;
+    width: 70%;
+    padding: 10px 10px;
+
+}
+
+li {
+    margin: 7px 0;
+}
+
+a:link {
+    color: #458588;
+    text-decoration: none;
+}
+a:visited {
+    color: #b16286;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
