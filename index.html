@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+ <head>
     <title>accrn.xyz</title>
+    <link rel="icon" type="image/x-icon" href="assets/deep.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
@@ -9,37 +10,64 @@
     <link rel="stylesheet" href="style.css">
   </head>
 
-  <body onload="myAge()">
-    <div id="main">
-      <h1>Hi! I'm SlashAcorn</h1>
-      <h2>This is my junk drawer of ideas and other useless garbage</h2>
-      <hr width="100%" size="2" color="#ebdbb2">
-      <br>
-      <h2>About Me</h2>
-      <p>
-        I am a <span id="age"></span> year old nerd currently interested in
-        Linux, Wayland and GNU Emacs<span id="birthday">.</span>
-      </p>
-      <br>
-      <h2>Projects</h2>
-      <div id="projlist">
-        <ul>
-          <li><a href="https://github.com/SlashAcorn/dotfiles">Dotfiles</a> - My Arch Linux Configuration Files</li>
-          <li><a href="https://github.com/SlashAcorn/hack-sh">Hack.sh</a> - Silly Script I made for Epic Hacking</li>
-          <li><a href="https://github.com/SlashAcorn/SchoolSite">How to Linux</a> - Linux Guide Website I made for School</li>
-          <li><a href="projects/game.html">Game</a> - Game I am Making For School</li>
-        </ul>
-      </div>
-      <br>
-      <footer>
-        <a href="https://gnu.org/software/emacs"><img src="assets/emacs.png"></a>
-        <a href="https://archlinux.org"><img src="assets/arch.png"></a>
-        <a href="https://yesterweb.org/no-to-web3/"><img src="https://yesterweb.org/no-to-web3/img/roly-saynotoweb3.gif"></a>
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
-        <img src="assets/nowebp.gif">
-      </footer>
-    </div>
-    <script>
+ <body onload="myAge()">
+   <header>
+     <nav>
+
+     </nav>
+   </header>
+   <div id="main">
+     <h1>Accrn.xyz ~/</h1>
+     <div id="term">
+       <pre>
+         [nhe@accrn.xyz] $ fetchme
+                ...        Name: SlashAcorn
+           ............    Age: <span id="age"></span>
+         ................. Time Zone: UTC<span id="tz"></span>
+         ......     ...... Distro: Arch Linux
+         .....       ..... Editor: GNU Emacs
+         ......     .,....
+         ...........'*'...
+            .........`.
+                ...
+
+       </pre>
+     </div>
+     <hr width="100%" size="2" color="#ebdbb2">
+     <br>
+     <h2>About Me</h2>
+     <p>
+       I am a <span id="age"></span> year old nerd currently interested in
+       Linux, Wayland and GNU Emacs<span id="birthday">.</span>
+     </p>
+     <br>
+     <h2>Projects</h2>
+     <div id="list">
+       <ul>
+         <li><a href="https://github.com/SlashAcorn/dotfiles">Dotfiles</a> - My Arch Linux Configuration Files</li>
+         <li><a href="https://github.com/SlashAcorn/hack-sh">Hack.sh</a> - Silly Script I made for Epic Hacking</li>
+         <li><a href="https://github.com/SlashAcorn/SchoolSite">How to Linux</a> - Linux Guide Website I made for School</li>
+         <li><a href="projects/game.html">Game</a> - Game I am Making For School</li>
+       </ul>
+     </div>
+     <h2>Contacts</h2>
+     <div id="list">
+       <ul>
+         <li><a href="https://discord.com/users/840186352774545450">Discord</a> - SlashAcorn</li>
+         <li><a href="https://github.com/SlashAcorn">Github</a> - SlashAcorn</li>
+         <li><a href="mailto:nhe@air.net.au">Email</a> - nhe@air.net.au</li>
+       </ul>
+     </div>
+     <br>
+     <footer>
+       <a href="https://gnu.org/software/emacs"><img src="assets/emacs.png"></a>
+       <a href="https://archlinux.org"><img src="assets/arch.png"></a>
+       <a href="https://yesterweb.org/no-to-web3/"><img src="https://yesterweb.org/no-to-web3/img/roly-saynotoweb3.gif"></a>
+       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+       <img src="assets/nowebp.gif">
+     </footer>
+   </div>
+    <script async>
       function myAge() {
           var date = new Date();
           var dd = String(date.getDate()).padStart(2, '0');
@@ -56,7 +84,21 @@
           if (longage == age) {
               document.getElementById("birthday").innerHTML = " and its my birthday today!";
           }
-      }
+      };
+
+      const getOffset = (timeZone) => {
+          const timeZoneName = Intl.DateTimeFormat("ia", {
+              timeZoneName: "shortOffset",
+              timeZone,
+          })
+                .formatToParts()
+                .find((i) => i.type === "timeZoneName").value;
+          const offset = timeZoneName.slice(3);
+          return offset;
+      };
+      
+  document.getElementById("tz").innerHTML = (getOffset("Australia/Canberra"));
+
     </script>
   </body>
 </html>
