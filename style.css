@@ -11,7 +11,7 @@ body {
 
 #main {
     max-width: 65%;
-    margin-top: 40px;
+    margin-top: 0px;
 }
 
 #list {
@@ -25,11 +25,11 @@ body {
 
 #term {
     background-color: #32302f;
-    border-radius: 10px;
+    border-radius: 7px;
     text-align: left;
     margin: auto;
-    width: 70%;
-    padding: 10px 10px;
+    width: 80%;
+    padding: 3px 0px;
 }
 
 li {
