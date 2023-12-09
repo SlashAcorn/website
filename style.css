@@ -1,6 +1,5 @@
 body {
     font-family: "Fira Code", monospace;
-    src: url("https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/FiraCodeNerdFontMono-Regular.ttf") format("truetype");
     text-align: center;
     font-size: 18px;
     display: flex;
@@ -23,14 +22,17 @@ body {
     padding: 10px 10px;
 }
 
-#term {
+.box {
     background-color: #32302f;
     border-radius: 7px;
     text-align: left;
     justify-content: left;
-    margin: auto;
-    width: 80%;
-    padding: 3px 30px;
+    width: 95%;
+    padding: 3px 3px;
+}
+
+#term {
+    font-family: "Fira Code", monospace;
 }
 
 li {
