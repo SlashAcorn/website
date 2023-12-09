@@ -1,5 +1,6 @@
 body {
     font-family: "Fira Code", monospace;
+    src: url("https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/FiraCodeNerdFontMono-Regular.ttf") format("truetype");
     text-align: center;
     font-size: 18px;
     display: flex;
