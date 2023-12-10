@@ -24,6 +24,8 @@ body {
 
 .box {
     background-color: #32302f;
+    border-color: #ebdbb2;
+    border-width: 2px;
     border-radius: 7px;
     text-align: left;
     justify-content: left;
@@ -32,11 +34,16 @@ body {
 }
 
 #term {
+    margin: 10px 10px;
     font-family: "Fira Code", monospace;
 }
 
 li {
     margin: 7px 0;
+}
+
+hr {
+    background-color: #ebdbb2;
 }
 
 a:link {
@@ -52,6 +59,6 @@ a:hover {
 }
 
 #buttons {
-
+    margin: 0px;
     font-size: 40px;
 }
